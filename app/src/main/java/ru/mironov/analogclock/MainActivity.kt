@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-
         val arrowSecond = findViewById<View>(R.id.arrow_second)
         val arrowMinute = findViewById<View>(R.id.arrow_minute)
         val arrowHour = findViewById<View>(R.id.arrow_hour)
@@ -40,6 +39,8 @@ class MainActivity : AppCompatActivity() {
             textNumber.text = i.toString()
             numberView.rotation = i * 360 / 12f
             numberView.invalidate()
+            textNumber.rotation=-i * 360 / 12f
+            textNumber.invalidate()
             item.addView(numberView)
         }
 
